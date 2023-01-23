@@ -1,0 +1,142 @@
+@import url(./normalize.css);
+
+@font-face {
+  font-family: 'Terminal';
+  font-weight: normal;
+  src: url(../font/monterminal.otf) format('opentype');
+}
+
+body {
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+* {
+  font-family: 'Terminal';
+  color: #008f11;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.help {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.terminal-window {
+  display: flex;
+  justify-content: center;
+}
+
+.terminal {
+  width: 500px;
+  height: 400px;
+  border: #fff solid 1px;
+  border-radius: 5px;
+  box-shadow: 8px 8px 10px 10px rgba(0, 143, 17, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-size: 12px;
+  background-color: black;
+}
+
+.terminal div {
+  margin: 0 10px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  overflow: auto
+}
+
+.answers p {
+  margin: 2px 0;
+}
+
+.answers ul {
+  list-style: none;
+  padding: 0;
+  margin: 2px 0;
+}
+
+.answers ul li {
+  padding: 0;
+  margin: 1px 0;
+  height: fit-content;
+}
+
+.command-line {
+  display: flex;
+  width: 480px;
+}
+
+.command-line input {
+  background: transparent;
+  border: none;
+  flex-grow: 1;
+}
+.command-line input:focus {
+  outline: none;
+}
+
+footer {
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto;
+  margin-bottom: 4px;
+}
+
+@media (min-width: 577px) and (max-width: 860px) {
+  .help h3 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    min-height: unset;
+    overflow-x: hidden;
+  }
+  header div {
+    font-size: 10px;
+  }
+  .help {
+    font-size: 8px;
+    height: 20px;
+  }
+  .help h3 {
+    text-align: center;
+  }
+  .terminal-window{
+    margin-bottom: 20px;
+  }
+  .terminal {
+    width: 100vw;
+    height: 80vh;
+    font-size: 8px;
+    border: none;
+  }
+  .command-line {
+    display: flex;
+    width: unset;
+  }
+
+  .command-line input {
+    background: transparent;
+    border: none;
+    flex-grow: 0.5;
+  }
+}
